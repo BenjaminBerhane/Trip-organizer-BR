@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
 import ActivityFormComponent from './ActivityFormComponent';
 
 const TravelForm = () => {
@@ -13,8 +12,8 @@ const TravelForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (activity.title.trim() !== "" && activity.startDate.trim() !== "" && activity.endDate.trim() !== "" && activity.destination.trim() !== "") {
-      const newDestination = { id: uuidv4(), ...activity };
-      console.log(`New destination added with ID: ${newDestination.id}`);
+      const newDestination = { ...activity };
+      console.log(`New destination added: ${newDestination.title}`);
       setDestinations([...destinations, newDestination]);
       setActivity({ title: "", startDate: "", endDate: "", destination: "" });
     }
@@ -37,8 +36,8 @@ const TravelForm = () => {
         <div className="result">
           <p>Your trips:</p>
           <ul>
-            {destinations.map((dest) => (
-              <li key={dest.id}>
+            {destinations.map((dest, index) => (
+              <li key={index}>
                 <strong>{dest.title}</strong> - {dest.destination} (from {dest.startDate} to {dest.endDate})
               </li>
             ))}
