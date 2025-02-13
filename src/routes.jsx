@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import TripView from "./pages/TripView";
 import App from "./App";
 import TripForm from "./components/TripForm";
+// import TripItem from "./components/TripItem";
+import TripList from "./components/TripList";
 // import { handleTripSubmission } from "./utils/tripHandlers";
 const router = createBrowserRouter([
   {
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/tripsview/:id",
         element: <TripView />
+      },
+      {
+        path: "/triplist",
+        element: <TripList/>
       }
     ],
   },
