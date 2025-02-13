@@ -1,5 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
+import TripView from "./pages/TripView";
 import App from "./App";
+import MockForm from "../test/MockForm";
+import { handleTripSubmission } from "./utils/tripHandlers";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,7 +19,7 @@ const router = createBrowserRouter([
       {
         path: "/tripsview/:id",
         element: <TripView />,
-      }
+      },
     ],
   },
 ]);
