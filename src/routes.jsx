@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         element: <h1>Alla resor</h1>,
       },
       {
-        path: "/tripsview/:id",
+        path: "/tripsview/:tripId",
         element: <TripView />
       },
       {
