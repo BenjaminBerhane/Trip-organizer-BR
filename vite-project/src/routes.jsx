@@ -20,10 +20,6 @@ const router = createBrowserRouter([
         path: "/tripsview/:id",
         element: <TripView />,
       },
-      {
-        path: "/mockform",
-        element: <MockForm onSubmit={handleTripSubmission}/>,
-      },
     ],
   },
 ]);
