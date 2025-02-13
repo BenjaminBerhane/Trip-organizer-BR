@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ActivityFormComponent from './ActivityFormComponent';
-import './TravelForm.css';
+import './TripForm.css';
 
 const TripForm = () => {
   const [activity, setActivity] = useState({ title: "", startDate: "", endDate: "", destination: "" });
