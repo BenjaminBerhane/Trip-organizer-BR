@@ -7,6 +7,7 @@ import { handleTripSubmission } from "../utils/tripHandlers";
 const TripForm = () => {
   const [activity, setActivity] = useState({ title: "", startDate: "", endDate: "", destination: "" });
   const [destinations, setDestinations] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
 
     //! Load trips from local storage on component mount
     useEffect(() => {
@@ -29,6 +30,10 @@ const TripForm = () => {
       console.log(`New destination added: ${newDestination.title}`);
       setDestinations([...destinations, newDestination]);
       setActivity({ title: "", startDate: "", endDate: "", destination: "" });
+      setErrorMessage("");
+    }
+    else {
+      setErrorMessage("Please fill out all fields before submitting.");
     }
   };
 
@@ -44,6 +49,7 @@ const TripForm = () => {
         handleSubmit={handleSubmit}
         handleCancel={handleCancel}
         isEditing={false}
+        errorMessage={errorMessage}
       />
       {destinations.length > 0 && (
         <div className="result">
