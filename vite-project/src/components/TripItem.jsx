@@ -1,10 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
-const handleClickShowDetails = (id) => {
-  navigate(`/tripsview/${id}`);
-};
+
 
 const TripItem = () => {
+
+  const navigate = useNavigate();
+
+  const handleClickShowDetails = (id) => {
+    navigate(`/tripsview/${id}`);
+  };
+
   return (
     <section>
       <ul>
