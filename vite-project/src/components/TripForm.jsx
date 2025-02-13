@@ -14,7 +14,7 @@ const TravelForm = () => {
 
   return (
         <div className="card-content">
-          <h1 className="title">Reseplanerare</h1>
+          <h1 className="title">Travel planner</h1>
           <form onSubmit={handleSubmit} className="form">
             <input
               type="text"
@@ -24,12 +24,12 @@ const TravelForm = () => {
               className="input"
             />
             <button type="submit" className="button">
-              Planera Resa
+              Plan trip
             </button>
           </form>
           {destinations.length > 0 && (
             <div className="result">
-              <p>Dina resmål:</p>
+              <p>Your trips:</p>
               <ul>
                 {destinations.map((dest, index) => (
                   <li key={index}><strong>{dest}</strong></li>
