@@ -1,19 +1,18 @@
 import { saveTrip } from "./storage";
+import { v4 as uuidv4 } from 'uuid';
 
-export function handleTripSubmission(event) {
-    event.preventDefault();
-    console.log("Submitted");
+export function handleTripSubmission(trip) {
+    console.log("Submitted Trip:", trip);
 
-    const form = event.target; // The form element
-    const formData = new FormData(form);
+    if (!trip.title || !trip.startDate || !trip.endDate || !trip.destination) {
+        console.error("Error: Missing trip data");
+        return;
+    }
 
-    const trip = {
-        title: formData.get("title"),
-        startDate: formData.get("startDate"),
-        endDate: formData.get("endDate"),
-        destination: formData.get("destination"),
-        id: formData.get("id"), // This allows editing an existing trip
-    };
+    // Ensure trip has an ID before saving
+    if (!trip.id) {
+        trip.id = uuidv4();
+    }
 
     saveTrip(trip);
 }
