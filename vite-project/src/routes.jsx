@@ -18,8 +18,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/tripsview/:id",
-        element: <TripView />,
-      },
+      }
     ],
   },
 ]);
