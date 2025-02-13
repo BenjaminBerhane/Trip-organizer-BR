@@ -1,11 +1,20 @@
-import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { useState, useEffect } from "react";
 import ActivityFormComponent from './ActivityFormComponent';
+import { getTrips } from "../utils/storage";
 import { handleTripSubmission } from "../utils/tripHandlers";
+/* import './TravelForm.css'; */
 
 const TripForm = () => {
   const [activity, setActivity] = useState({ title: "", startDate: "", endDate: "", destination: "" });
   const [destinations, setDestinations] = useState([]);
+
+    //! Load trips from local storage on component mount
+    useEffect(() => {
+      const savedTrips = getTrips();
+      if (savedTrips) {
+        setDestinations(savedTrips);
+      }
+    }, []);
 
   const handleChange = (field, value) => {
     setActivity({ ...activity, [field]: value });
@@ -14,8 +23,10 @@ const TripForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (activity.title.trim() !== "" && activity.startDate.trim() !== "" && activity.endDate.trim() !== "" && activity.destination.trim() !== "") {
-      const newDestination = { id: uuidv4(), ...activity };
-      console.log(`New destination added with ID: ${newDestination.id}`);
+      handleTripSubmission(activity); // Pass activity directly
+  
+      const newDestination = { ...activity };
+      console.log(`New destination added: ${newDestination.title}`);
       setDestinations([...destinations, newDestination]);
       setActivity({ title: "", startDate: "", endDate: "", destination: "" });
     }
@@ -38,8 +49,8 @@ const TripForm = () => {
         <div className="result">
           <p>Your trips:</p>
           <ul>
-            {destinations.map((dest) => (
-              <li key={dest.id}>
+            {destinations.map((dest, index) => (
+              <li key={index}>
                 <strong>{dest.title}</strong> - {dest.destination} (from {dest.startDate} to {dest.endDate})
               </li>
             ))}

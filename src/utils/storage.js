@@ -1,7 +1,9 @@
 // storage.js
 import { v4 as uuidv4 } from 'uuid';
+
 export function getTrips() {
-    return JSON.parse(localStorage.getItem('trips'));
+    const trips = JSON.parse(localStorage.getItem("trips"));
+    return Array.isArray(trips) ? trips : []; // Ensure it always returns an array
 }
 
 // save to local storage
@@ -11,12 +13,14 @@ export function saveTrips(trips) {
 
 // find index by id
 export function findTripIndexById(id) {
+    if (!id) return -1; //? Prevent undefined errors
     const trips = getTrips();
     if (!trips | trips == null | trips == []){
         return false;
     }
     return trips.findIndex(trip => trip.id === id);
 }
+
 
 
 export function saveTrip(trip) { // save trip Object to trip array, returns new array
@@ -28,7 +32,9 @@ export function saveTrip(trip) { // save trip Object to trip array, returns new 
     if (existingTripIndex === -1) {
         console.log(`No previous trip found for ${trip.id}, saving a new one`);
     
-        trip.id = uuidv4(); // generate unique ID for new trip
+        // generate unique ID for new trip
+        trip.id = uuidv4(); //todo check if necessary 
+        
         savedTrips.push(trip); // add new trip to savedTrips array
         saveTrips(savedTrips); // replaced trips in local storage
         

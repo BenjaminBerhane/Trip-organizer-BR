@@ -8,6 +8,7 @@ const ActivityFormComponent = ({ activity, handleChange, handleSubmit, handleCan
       <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
+          name='title'
           placeholder="Titel"
           value={activity.title}
           onChange={(e) => handleChange('title', e.target.value)}
@@ -15,6 +16,7 @@ const ActivityFormComponent = ({ activity, handleChange, handleSubmit, handleCan
         />
         <input
           type="date"
+          name='startDate'
           placeholder="Startdatum"
           value={activity.startDate}
           onChange={(e) => handleChange('startDate', e.target.value)}
@@ -22,6 +24,7 @@ const ActivityFormComponent = ({ activity, handleChange, handleSubmit, handleCan
         />
         <input
           type="date"
+          name='endDate'
           placeholder="Slutdatum"
           value={activity.endDate}
           onChange={(e) => handleChange('endDate', e.target.value)}
@@ -29,6 +32,7 @@ const ActivityFormComponent = ({ activity, handleChange, handleSubmit, handleCan
         />
         <input
           type="text"
+          name='destination'
           placeholder="Destination"
           value={activity.destination}
           onChange={(e) => handleChange('destination', e.target.value)}

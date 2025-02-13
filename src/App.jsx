@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import './App.css'
-import TravelForm from './components/TripForm';  
+/* import './TripForm.css'; */
 
 function App() {
 
