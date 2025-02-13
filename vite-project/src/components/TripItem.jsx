@@ -11,6 +11,14 @@ const TripItem = () => {
     navigate(`/tripsview/${id}`);
   };
 
+  const handleClickEdit = () => {
+    console.log('Edit')
+  }
+  
+  const handleClickDelete = () => {
+    console.log('Delete')
+  }
+
   return (
     <section>
       <ul>
