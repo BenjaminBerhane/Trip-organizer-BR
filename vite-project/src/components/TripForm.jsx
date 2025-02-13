@@ -9,6 +9,7 @@ const TravelForm = () => {
     e.preventDefault();
     if (destination.trim() !== "") {
       const newDestination = { id: uuidv4(), name: destination };
+      console.log(`New destination added with ID: ${newDestination.id}`);
       setDestinations([...destinations, newDestination]);
       setDestination("");
     }
