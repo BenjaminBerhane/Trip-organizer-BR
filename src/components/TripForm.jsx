@@ -2,7 +2,7 @@ import { useState } from "react";
 import ActivityFormComponent from './ActivityFormComponent';
 import './TravelForm.css';
 
-const TravelForm = () => {
+const TripForm = () => {
   const [activity, setActivity] = useState({ title: "", startDate: "", endDate: "", destination: "" });
   const [destinations, setDestinations] = useState([]);
 
@@ -49,4 +49,4 @@ const TravelForm = () => {
   );
 };
 
-export default TravelForm;
+export default TripForm;
