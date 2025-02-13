@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import ActivityFormComponent from './ActivityFormComponent';
+import { handleTripSubmission } from "../utils/tripHandlers";
 
-const TravelForm = () => {
+const TripForm = () => {
   const [activity, setActivity] = useState({ title: "", startDate: "", endDate: "", destination: "" });
   const [destinations, setDestinations] = useState([]);
 
@@ -49,4 +50,4 @@ const TravelForm = () => {
   );
 };
 
-export default TravelForm;
+export default TripForm;

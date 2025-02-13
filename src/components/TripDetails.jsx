@@ -2,7 +2,7 @@
 import { getTrips } from '../utils/storage.js';
 import { useParams, Link } from 'react-router-dom';
 import { useEffect,useState } from 'react';
-import './TripDetails.css';
+// import './TripDetails.css';
 
 
 export default function TripDetails() {

@@ -7,7 +7,7 @@ function App() {
   return (
     <>
      <main>
-      <TravelForm />
+      <Outlet />
      </main>
       
     </>
