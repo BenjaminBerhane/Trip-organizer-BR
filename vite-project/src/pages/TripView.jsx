@@ -1,9 +1,8 @@
-import React from 'react'
-
-function TripView() {
-  return (
-    <div>TripView</div>
-  )
+import TripDetails from "../components/TripDetails";  
+const TripView = () => {
+  return ( 
+      <TripDetails />
+   );
 }
-
-export default TripView
+ 
+export default TripView;
