@@ -60,6 +60,7 @@ ActivityFormComponent.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   handleCancel: PropTypes.func.isRequired,
   isEditing: PropTypes.bool.isRequired,
+  
 };
 
 export default ActivityFormComponent;

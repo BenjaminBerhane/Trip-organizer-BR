@@ -5,6 +5,7 @@ import TripForm from './components/TripForm';
 function App() {
 
   return (
+
     <>
      <main>
       <Outlet />
