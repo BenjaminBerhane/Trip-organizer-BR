@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import ActivityFormComponent from './ActivityFormComponent';
 import { getTrips } from "../../utils/storage";
 import { handleTripSubmission } from "../../utils/tripHandlers";
-/* import './TravelForm.css'; */
+import { useNavigate } from "react-router-dom";
+// import '../components/TripForm/TravelForm.css'; 
+
 
 const TripForm = () => {
   const [activity, setActivity] = useState({ title: "", startDate: "", endDate: "", destination: "" });
   const [destinations, setDestinations] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
     //! Load trips from local storage on component mount
     useEffect(() => {
@@ -31,6 +34,7 @@ const TripForm = () => {
       setDestinations([...destinations, newDestination]);
       setActivity({ title: "", startDate: "", endDate: "", destination: "" });
       setErrorMessage("");
+      navigate("/alltripsview");
     }
     else {
       setErrorMessage("Please fill out all fields before submitting.");
@@ -51,18 +55,6 @@ const TripForm = () => {
         isEditing={false}
         errorMessage={errorMessage}
       />
-      {destinations.length > 0 && (
-        <div className="result">
-          <p>Your trips:</p>
-          <ul>
-            {destinations.map((dest, index) => (
-              <li key={index}>
-                <strong>{dest.title}</strong> - {dest.destination} (from {dest.startDate} to {dest.endDate})
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </div>
   );
 };
