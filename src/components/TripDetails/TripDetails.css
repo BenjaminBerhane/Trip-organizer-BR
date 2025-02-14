@@ -1,0 +1,70 @@
+.trip-details {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.trip-details-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.trip-details-info {
+  font-size: 1rem;
+  color: #555;
+  text-align: left;
+}
+
+.trip-details-destination,
+.trip-details-date {
+  margin: 5px 0;
+}
+
+.back-button {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff4d4d;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.back-button:hover {
+  background-color: #e04343;
+}
+
+.deleteTripBtn,
+.EditTripBtn {
+  margin-top: 15px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.deleteTripBtn {
+  background-color: #ff4d4d;
+  color: white;
+  margin-right: 10px;
+}
+
+.EditTripBtn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.deleteTripBtn:hover {
+  background-color: #e04343;
+}
+
+.EditTripBtn:hover {
+  background-color: #449d48;
+}
