@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import TripItem from './TripItem';
-import { getTrips } from '../utils/storage.js';
+import TripItem from '../TripItem/TripItem.jsx';
+import { getTrips } from '../../utils/storage.js';
 
 
 
