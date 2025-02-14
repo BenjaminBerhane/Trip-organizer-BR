@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ActivityFormComponent from './ActivityFormComponent';
-import { getTrips } from "../utils/storage";
-import { handleTripSubmission } from "../utils/tripHandlers";
+import { getTrips } from "../../utils/storage";
+import { handleTripSubmission } from "../../utils/tripHandlers";
 /* import './TravelForm.css'; */
 
 const TripForm = () => {

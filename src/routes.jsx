@@ -1,7 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import TripView from "./pages/TripView";
 import App from "./App";
-import TripForm from "./components/TripForm";
+import TripForm from "./components/TripForm/TripForm";
+// import TripItem from "./components/TripItem";
+import TripList from "./components/TripList/TripList";
+import AllTripsView from "./pages/AllTripsView";
 // import { handleTripSubmission } from "./utils/tripHandlers";
 const router = createBrowserRouter([
   {
@@ -17,13 +20,17 @@ const router = createBrowserRouter([
         element: <TripForm />,
       },
       {
-        path: "/trip/",
-        element: <h1>Alla resor</h1>,
+        path: "/alltripsview/",
+        element: <AllTripsView />,
       },
       {
-        path: "/tripsview/:id",
+        path: "/tripsview/:tripId",
         element: <TripView />
-      }
+      },
+      {
+        path: "*",
+        element: <h1>404</h1>,
+      },
     ],
   },
 ]);
