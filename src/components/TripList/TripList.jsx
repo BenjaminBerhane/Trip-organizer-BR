@@ -10,9 +10,9 @@ const TripList = () => {
   const trips = getTrips()
 
   const navigate = useNavigate();
-  const handleClickAdd =() =>
+  const handleClickAdd =() => {
     navigate ("/addtrip");
-  
+  }
 
   const handleClickShowDetails = (id) => {
     navigate(`/tripsview/${id}`);
@@ -20,7 +20,10 @@ const TripList = () => {
 
   return (
     <section>
-      <button onClick= {handleClickAdd}> +</button>
+      <div id="add-trip">
+        <button onClick={handleClickAdd} className='add-button'>+</button>
+        <p>Tryck för att lägga till en ny resa</p>
+      </div>
       <ul>
         {trips.map((trip) => (
           <li 
