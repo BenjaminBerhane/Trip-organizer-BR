@@ -1,23 +1,19 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import Testing from '../TripItem/TripItem.jsx';
-import { getTrips } from '../../utils/storage.js';
 import './TripList.css';
+
 
 
 
 const TripList = () => {
 
-  const trips = getTrips()
-
+  
   const navigate = useNavigate();
+
   const handleClickAdd =() => {
     navigate ("/addtrip");
   }
-
-  const handleClickShowDetails = (id) => {
-    navigate(`/tripsview/${id}`);
-  };
 
   return (
     <section>
@@ -29,14 +25,10 @@ const TripList = () => {
         </div>
       </div>
       <ul>
-        {trips.map((trip) => (
-          <li 
-            onClick={() => handleClickShowDetails(trip.id)} 
-            className='trip'
-          >
-           <Testing key={trip.id} {...trip} />
-          </li>
-        ))}
+       
+           <Testing />
+          
+        
       </ul>
     </section>
   )
