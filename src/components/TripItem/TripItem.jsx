@@ -18,17 +18,17 @@ const TripItem = ({ id, title, startDate, endDate, destination } ) => {
 
   return (
     
-          <>
-            <div className='trip-item'><strong>Titel: </strong><br />{title}</div>
+          <article className="trip-item-container">
+            <div className='trip-item' id='title'><strong>Titel: </strong><br />{title}</div>
             <div className='trip-item'><strong>Från: </strong><br />{startDate}</div>
             <div className='trip-item'><strong>Till: </strong><br />{endDate}</div>
             <div className='trip-item'><strong>Destination: </strong><br />{destination}</div>
             
             <div className='trip-item trip-buttons'>
               <button onClick={(event) => handleClickEdit(event, id)}>Ändra</button>
-              <button onClick={(event) => handleClickDelete(event, id)}>X</button>
+              <button onClick={(event) => handleClickDelete(event, id)}>x</button>
             </div>
-          </>
+          </article>
         );
       }
 
