@@ -5,7 +5,7 @@ import TripForm from "./components/TripForm/TripForm";
 // import TripItem from "./components/TripItem";
 // import TripList from "./components/TripList/TripList";
 import AllTripsView from "./pages/AllTripsView";
-// import { handleTripSubmission } from "./utils/tripHandlers";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         element: <TripForm />,
       },
       {
-        path: "/alltripsview/",
+        path: "/alltripsview",
         element: <AllTripsView />,
       },
       {
