@@ -1,4 +1,3 @@
-// import { v4 as uuidv4 } from 'uuid';
 import { getTrips } from '../../utils/storage';
 import { useParams, Link } from 'react-router-dom';
 import { useEffect,useState } from 'react';
