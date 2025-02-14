@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import TripItem from '../TripItem/TripItem.jsx';
+import Testing from '../TripItem/TripItem.jsx';
 import { getTrips } from '../../utils/storage.js';
 import './TripList.css';
 
@@ -34,7 +34,7 @@ const TripList = () => {
             onClick={() => handleClickShowDetails(trip.id)} 
             className='trip'
           >
-           <TripItem key={trip.id} {...trip} />
+           <Testing key={trip.id} {...trip} />
           </li>
         ))}
       </ul>
