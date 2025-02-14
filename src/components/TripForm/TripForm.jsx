@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ActivityFormComponent from './ActivityFormComponent';
+import ActivityFormComponent from './TripFormComponent';
 import { getTrips } from "../../utils/storage";
 import { handleTripSubmission } from "../../utils/tripHandlers";
 import { useNavigate } from "react-router-dom";
