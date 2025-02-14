@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import TripItem from '../TripItem/TripItem.jsx';
 import { getTrips } from '../../utils/storage.js';
+import './TripList.css';
 
 
 
@@ -20,9 +21,12 @@ const TripList = () => {
 
   return (
     <section>
-      <div id="add-trip">
-        <button onClick={handleClickAdd} className='add-button'>+</button>
-        <p>Tryck för att lägga till en ny resa</p>
+      <div id="trip-header">
+        <h2>Dina planerade resor</h2>
+        <div id="add-trip">
+          <p className="add-trip-text">Tryck för att lägga till en ny resa</p>
+          <button onClick={handleClickAdd} className="add-button">+</button>
+        </div>
       </div>
       <ul>
         {trips.map((trip) => (

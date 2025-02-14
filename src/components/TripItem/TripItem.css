@@ -1,0 +1,10 @@
+.trip-buttons {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .trip-buttons {
+    display: flex;
+  }
+  
+}
