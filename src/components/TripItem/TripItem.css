@@ -7,9 +7,9 @@ justify-content: space-between;
 gap: 1rem;
 width: clamp(200px, 80vw, 600px);
 
-background-color: rgb(31, 31, 31);
-padding: 1rem;
-border: 1.5px solid rgb(29, 28, 28);
+background-color: rgb(255, 255, 255);
+padding: 1rem 2rem;
+border: 1.5px solid rgb(238, 238, 238);
 border-radius: 8px;
 }
 

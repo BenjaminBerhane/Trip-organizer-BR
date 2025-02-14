@@ -1,8 +1,8 @@
 .card-content {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 4rem;
     max-width: 600px;
     margin: 20px auto;
   }
@@ -17,6 +17,7 @@
   .form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
   }
   
@@ -25,6 +26,16 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
+    width: 100%;
+    background-color: rgb(243, 243, 243);
+    color: black;
+  }
+  .input::-webkit-calendar-picker-indicator { /* calendar icon in browser */
+    filter: invert(100%); /* inverts from white to black */
+  }
+
+  .input:active{
+    background-color: white;
   }
   
   .button {
@@ -33,9 +44,10 @@
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #0c3664;
     color: white;
     transition: background-color 0.3s ease;
+    width: 80px;
   }
   
   .button:hover {

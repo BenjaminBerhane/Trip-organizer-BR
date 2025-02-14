@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const ActivityFormComponent = ({ activity, handleChange, handleSubmit, handleCancel, isEditing }) => {
   return (
-    <div className="card-content">
+    <>
       <h1 className="title">{isEditing ? 'Edit Activity' : 'Add Activity'}</h1>
       <form onSubmit={handleSubmit} className="form">
         <input
@@ -45,7 +45,7 @@ const ActivityFormComponent = ({ activity, handleChange, handleSubmit, handleCan
           Cancel
         </button>
       </form>
-    </div>
+    </>
   );
 };
 
