@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         element: <AllTripsView />,
       },
       {
-        path: "/tripsview/:tripId",
+        path: "/tripview/:tripId",
         element: <TripView />
       },
       {

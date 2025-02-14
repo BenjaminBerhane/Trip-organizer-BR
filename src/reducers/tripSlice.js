@@ -1,6 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-// Mockad async operation för att spara till localStorage
+// Hämta resor från localStorage vid start
+const loadTripsFromLocalStorage = () => {
+  const storedTrips = localStorage.getItem('trips');
+  return storedTrips ? JSON.parse(storedTrips) : [];
+};
+
+// Async operation för att spara trips till localStorage
 export const saveTripsToLocalStorage = createAsyncThunk(
   'trips/saveToLocalStorage',
   async (trips, thunkAPI) => {
@@ -12,7 +18,7 @@ export const saveTripsToLocalStorage = createAsyncThunk(
 const tripSlice = createSlice({
   name: 'trips',
   initialState: {
-    trips: [],
+    trips: loadTripsFromLocalStorage(), // ✅ Ladda resor vid start
     selectedTrip: null,
     status: 'idle',
     error: null
@@ -23,6 +29,9 @@ const tripSlice = createSlice({
     },
     setSelectedTrip: (state, action) => {
       state.selectedTrip = action.payload;
+    },
+    loadTrips: (state) => {
+      state.trips = loadTripsFromLocalStorage(); // ✅ Reducer för att ladda trips manuellt
     }
   },
   extraReducers: (builder) => {
@@ -41,5 +50,5 @@ const tripSlice = createSlice({
   }
 });
 
-export const { addTrip, setSelectedTrip } = tripSlice.actions;
+export const { addTrip, setSelectedTrip, loadTrips } = tripSlice.actions;
 export default tripSlice.reducer;

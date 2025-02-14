@@ -2,13 +2,14 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import Testing from '../TripItem/TripItem.jsx';
 import './TripList.css';
+import { useSelector } from 'react-redux';
 
 
 
 
 const TripList = () => {
 
-  
+  const trips = useSelector(state => state.trips?.trips || []);
   const navigate = useNavigate();
 
   const handleClickAdd =() => {
@@ -25,10 +26,9 @@ const TripList = () => {
         </div>
       </div>
       <ul>
-       
-           <Testing />
-          
-        
+        {trips.map((trip) => (
+          <Testing key={trip.id} {...trip} />
+        ))}
       </ul>
     </section>
   )
