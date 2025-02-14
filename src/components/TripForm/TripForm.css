@@ -44,7 +44,7 @@
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #0c3664;
+    background-color: var(--primary-color);
     color: white;
     transition: background-color 0.3s ease;
     width: 80px;
