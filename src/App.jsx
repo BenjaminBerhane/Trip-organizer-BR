@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 /* import './TripForm.css'; */
 /* import { useEffect } from 'react';
 import { useDispatch } from 'react-redux'; */
@@ -22,6 +23,7 @@ function App() {
      <main>
       <Outlet />
      </main>
+     <Footer/>
       
     </>
   )

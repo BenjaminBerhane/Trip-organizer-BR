@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedTrip, deleteTrip } from '../../reducers/tripSlice';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 /* const TripItem = ({ id, title, startDate, endDate, destination } ) => { */
 const TripItem = ({id}) => {
@@ -48,8 +50,18 @@ const TripItem = ({id}) => {
     <div className='trip-item'><strong>Destination: </strong>{trip.destination}</div>
     
     <div className='trip-item trip-buttons'>
-      <button onClick={handleClickEdit}>Ändra</button>
-      <button onClick={handleClickDelete}>X</button>
+      <button onClick={handleClickEdit} aria-label='Edit trip'>
+        <FontAwesomeIcon icon={faPencil} fixedWidth />
+      </button>
+      <button onClick={handleClickDelete} aria-label='Delete trip'>
+        <FontAwesomeIcon icon={faTrash} fixedWidth />
+      </button>
+      {/* <button onClick={handleClickEdit}>
+        <FontAwesomeIcon icon={faPencil} fixedWidth /> Ändra
+      </button>
+      <button onClick={handleClickDelete}>
+        <FontAwesomeIcon icon={faTrash} fixedWidth /> Ta bort
+      </button> */}
     </div>
   </li>
                        

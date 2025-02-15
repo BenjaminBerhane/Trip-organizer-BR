@@ -55,6 +55,10 @@
 
 @media (max-width: 600px) {
 
+    header {
+        justify-content: center;
+    }
+
     .nav-bar {
         justify-content: center;
     }
@@ -64,7 +68,6 @@
         /* top: 50px; */
         /* left: 0;
         right: 0; */
-        background-color: rgb(8, 59, 50);
         justify-content: center;
         gap: clamp(.2rem, 5vw, 3rem);
     }

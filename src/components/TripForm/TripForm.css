@@ -4,6 +4,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 4rem;
     max-width: 600px;
+    min-width: 250px;
     margin: 20px auto;
   }
   
