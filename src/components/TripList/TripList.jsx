@@ -17,7 +17,7 @@ const TripList = () => {
   }
 
   return (
-    <section>
+    <section className='trip-list-section-wrapper'>
       <div id="trip-header">
         <h2>Dina planerade resor</h2>
         <div id="add-trip">
@@ -25,7 +25,7 @@ const TripList = () => {
           <button onClick={handleClickAdd} className="add-button">+</button>
         </div>
       </div>
-      <ul>
+      <ul className='trip-list'>
         {trips.map((trip) => (
           <Testing key={trip.id} {...trip} />
         ))}

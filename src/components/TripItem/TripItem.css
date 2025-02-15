@@ -1,10 +1,46 @@
+.trip-item-container {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-between;
+gap: 1rem;
+width: clamp(200px, 80vw, 600px);
+
+background-color: rgb(255, 255, 255);
+padding: 1rem 2rem;
+border: 1.5px solid rgb(238, 238, 238);
+border-radius: 8px;
+}
+
+.trip-item#title{
+  flex: 1 0 100%; /* title fills one row completely, forcing wrap */
+}
+
 .trip-buttons {
   display: none;
+  width: fit-content;
+  height: fit-content;
+
+  
+}
+
+.trip-buttons button {
+  padding: .5rem;
+  border-radius: 8px;
+  border: none;
+  min-width: 32px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
   .trip-buttons {
     display: flex;
+    justify-self: end;
+    gap: .5rem;
   }
   
 }
