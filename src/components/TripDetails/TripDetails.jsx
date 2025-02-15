@@ -13,7 +13,12 @@ const TripDetails = () => {
   const trip = useSelector(state => state.trips.trips.find(trip => trip.id === tripId));
 
   if (!trip) {
-    return <div>Laddar...</div>;
+    return (
+      <div className="trip-not-found">
+        <h2>Kan inte hitta resan</h2>
+        <Link to="/alltripsview">Gå tillbaka</Link>
+      </div>
+    );
   }
 
   const handleDelete = () => {

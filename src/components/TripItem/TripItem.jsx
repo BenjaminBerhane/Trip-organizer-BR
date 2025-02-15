@@ -1,16 +1,22 @@
 /* import React from 'react' */
 // import { useNavigate } from 'react-router-dom';
 import './TripItem.css'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedTrip, deleteTrip } from '../../reducers/tripSlice';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const TripItem = ({ id, title, startDate, endDate, destination } ) => {
-  
-
+/* const TripItem = ({ id, title, startDate, endDate, destination } ) => { */
+const TripItem = ({id}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+   //! ✅ Fetch the trip from Redux using `id`
+   const trip = useSelector(state => state.trips.trips.find(trip => trip.id === id));
+
+   if (!trip) {
+    return null; // ✅ Prevent errors if trip is not found
+  }
 
   const handleClickEdit = (e) => {
     e.stopPropagation(); //prevent tripview navigation on button clicks
@@ -18,7 +24,8 @@ const TripItem = ({ id, title, startDate, endDate, destination } ) => {
     navigate(`/edittrip/${id}`)
   }
   
-  const handleClickDelete = () => {
+  const handleClickDelete = (e) => {
+    e.stopPropagation();
     console.log('Delete')
     dispatch(deleteTrip(id)) /* ******** oklart */
   }
@@ -35,10 +42,10 @@ const TripItem = ({ id, title, startDate, endDate, destination } ) => {
 
   return (
     <li className='trip-item-container' onClick={handleSelectTrip}>
-    <div id='title' className='trip-item'><strong>Titel: </strong>{title}</div>
-    <div className='trip-item'><strong>Från: </strong>{startDate}</div>
-    <div className='trip-item'><strong>Till: </strong>{endDate}</div>
-    <div className='trip-item'><strong>Destination: </strong>{destination}</div>
+    <div id='title' className='trip-item'><strong>Titel: </strong>{trip.title}</div>
+    <div className='trip-item'><strong>Från: </strong>{trip.startDate}</div>
+    <div className='trip-item'><strong>Till: </strong>{trip.endDate}</div>
+    <div className='trip-item'><strong>Destination: </strong>{trip.destination}</div>
     
     <div className='trip-item trip-buttons'>
       <button onClick={handleClickEdit}>Ändra</button>
@@ -52,10 +59,6 @@ const TripItem = ({ id, title, startDate, endDate, destination } ) => {
 
 TripItem.propTypes = {
   id: PropTypes.string.isRequired, 
-  title: PropTypes.string.isRequired,
-  startDate: PropTypes.string.isRequired,
-  endDate: PropTypes.string.isRequired,
-  destination: PropTypes.string.isRequired,
 };
 
 export default TripItem

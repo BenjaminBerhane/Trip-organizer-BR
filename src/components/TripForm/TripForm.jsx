@@ -16,7 +16,7 @@ const TripForm = () => {
 
   const [trip, setTrip] = useState(
     existingTrip || { id: uuidv4(), title: "", startDate: "", endDate: "", destination: "" }
-  ); /**  added uuidv4 to generate unique ID for new trip //Rebecca */
+  ); /*!  added uuidv4 to generate unique ID for new trip //Rebecca */
 
   const [errorMessage, setErrorMessage] = useState(""); 
 

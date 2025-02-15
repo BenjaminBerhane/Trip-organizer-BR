@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import Testing from '../TripItem/TripItem.jsx';
+import TripItem from '../TripItem/TripItem.jsx';
 import './TripList.css';
 import { useSelector, /* useDispatch  */} from 'react-redux';
 /* import { loadTrips } from '../../reducers/tripSlice.js'; */
@@ -31,7 +31,7 @@ const TripList = () => {
       </div>
       <ul className='trip-list'>
         {trips.map((trip) => (
-          <Testing key={trip.id} {...trip} />
+          <TripItem key={trip.id} {...trip} />
         ))}
       </ul>
     </section>

@@ -12,7 +12,13 @@ const saveTripsToLocalStorage = (trips) => {
 };
 
 const initialState = {
-  trips: loadTripsFromLocalStorage(), // ✅ Load from localStorage
+  // Load trips from localStorage if available, otherwise use default trips
+  trips: loadTripsFromLocalStorage().length ? loadTripsFromLocalStorage() : [
+    { id: "1", title: "Paris", startDate: "2022-01-01", endDate: "2022-01-05", destination: "Paris, France" },
+    { id: "2", title: "Rome", startDate: "2022-02-01", endDate: "2022-02-03", destination: "Rome, Italy" },
+    { id: "3", title: "Barcelona", startDate: "2022-03-01", endDate: "2022-03-04", destination: "Barcelona, Spain" },
+  ],
+  // No trip selected by default
   selectedTrip: null,
 };
 
@@ -35,7 +41,7 @@ const tripSlice = createSlice({
       state.trips = state.trips.filter((trip) => trip.id !== action.payload);
       saveTripsToLocalStorage(state.trips); // ✅ Save updated state to localStorage
     },
-    setSelectedTrip: (state, action) => {
+    setSelectedTrip: (state, action) => { //not currently in use, but could be good for future development to keep track of the selectedTrip across page views (and if saved in local storage)
       state.selectedTrip = action.payload;
     },
   },

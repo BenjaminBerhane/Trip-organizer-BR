@@ -11,15 +11,15 @@ function Navbar() {
         <ul>
             <li><NavLink to="/">
                 <FontAwesomeIcon icon={faHouse} />
-                <span>Home</span>
+                <span>Hem</span>
             </NavLink></li>
             <li><NavLink to="/alltripsview">
                 <FontAwesomeIcon icon={faPlane} />
-                <span>All Trips</span>
+                <span>Planerade Resor</span>
             </NavLink></li>
             <li><NavLink to="/addtrip">
                 <FontAwesomeIcon icon={faPlus} />
-                <span>New Trip</span>
+                <span>Skapa Resa</span>
             </NavLink></li>
             <li><NavLink to="*">
                 <FontAwesomeIcon icon={faExclamationTriangle} />
