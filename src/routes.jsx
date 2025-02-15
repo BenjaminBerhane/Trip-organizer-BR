@@ -5,6 +5,7 @@ import TripForm from "./components/TripForm/TripForm";
 // import TripItem from "./components/TripItem";
 // import TripList from "./components/TripList/TripList";
 import AllTripsView from "./pages/AllTripsView";
+import Home from "./pages/Home";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
     children: [
       {
         index:true,
-        element: <h1>Home</h1>
+        element: <Home />
       },
       {
         path:"/addtrip",
