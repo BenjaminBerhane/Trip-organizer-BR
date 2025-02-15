@@ -2,7 +2,7 @@
 // import { useNavigate } from 'react-router-dom';
 import './TripItem.css'
 import { useDispatch } from 'react-redux';
-import { setSelectedTrip } from '../../reducers/tripSlice';
+import { setSelectedTrip, deleteTrip } from '../../reducers/tripSlice';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -12,16 +12,25 @@ const TripItem = ({ id, title, startDate, endDate, destination } ) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleClickEdit = () => {
+  const handleClickEdit = (e) => {
+    e.stopPropagation(); //prevent tripview navigation on button clicks
     console.log('Edit')
     navigate(`/edittrip/${id}`)
   }
   
   const handleClickDelete = () => {
     console.log('Delete')
+    dispatch(deleteTrip(id)) /* ******** oklart */
   }
+  
+  /* 
   const handleSelectTrip = () => {
     dispatch(setSelectedTrip({ id, title, startDate, endDate, destination })); navigate(`/tripview/${id}`); // ✅ Navigera till TripDetails
+  }; */
+
+  const handleSelectTrip = () => {
+    dispatch(setSelectedTrip(id)); // ✅ Pass only `id`
+    navigate(`/tripview/${id}`);
   };
 
   return (
