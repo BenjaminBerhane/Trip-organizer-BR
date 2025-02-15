@@ -9,7 +9,7 @@ const loadTripsFromLocalStorage = () => {
 // Async operation för att spara trips till localStorage
 export const saveTripsToLocalStorage = createAsyncThunk(
   'trips/saveToLocalStorage',
-  async (trips, thunkAPI) => {
+  async (trips) => {
     localStorage.setItem('trips', JSON.stringify(trips));
     return trips;
   }
