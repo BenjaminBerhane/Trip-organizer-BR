@@ -12,6 +12,11 @@ padding: 1rem 2rem;
 border: 1.5px solid rgb(238, 238, 238);
 border-radius: 8px;
 }
+.trip-item-container:hover {
+  background-color: rgb(248, 251, 252);
+  transition: 100ms;
+  border: 1.5px solid rgb(236, 238, 243);
+}
 
 .trip-item#title{
   flex: 1 0 100%; /* title fills one row completely, forcing wrap */

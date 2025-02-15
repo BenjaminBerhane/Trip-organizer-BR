@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import Testing from '../TripItem/TripItem.jsx';
 import './TripList.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { loadTrips } from '../../reducers/tripSlice.js';
+import { useSelector, /* useDispatch  */} from 'react-redux';
+/* import { loadTrips } from '../../reducers/tripSlice.js'; */
 
 
 
@@ -11,9 +11,9 @@ const TripList = () => {
 
   const trips = useSelector(state => state.trips?.trips || []);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+/*   const dispatch = useDispatch(); */ /* No longer needed as local storage is loaded in tripSlice */
 
-  dispatch(loadTrips);
+/*   dispatch(loadTrips); */
   
 
   const handleClickAdd =() => {
