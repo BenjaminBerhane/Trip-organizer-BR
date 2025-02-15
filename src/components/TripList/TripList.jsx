@@ -1,23 +1,24 @@
-import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import TripItem from '../TripItem/TripItem.jsx';
-import { getTrips } from '../../utils/storage.js';
+import Testing from '../TripItem/TripItem.jsx';
 import './TripList.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { loadTrips } from '../../reducers/tripSlice.js';
+
 
 
 
 const TripList = () => {
 
-  const trips = getTrips()
-
+  const trips = useSelector(state => state.trips?.trips || []);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  dispatch(loadTrips);
+  
+
   const handleClickAdd =() => {
     navigate ("/addtrip");
   }
-
-  const handleClickShowDetails = (id) => {
-    navigate(`/tripsview/${id}`);
-  };
 
   return (
     <section className='trip-list-section-wrapper'>
@@ -30,12 +31,7 @@ const TripList = () => {
       </div>
       <ul className='trip-list'>
         {trips.map((trip) => (
-          <li key={trip.id}
-            onClick={() => handleClickShowDetails(trip.id)} 
-            className='trip'
-          >
-           <TripItem key={trip.id} {...trip} />
-          </li>
+          <Testing key={trip.id} {...trip} />
         ))}
       </ul>
     </section>

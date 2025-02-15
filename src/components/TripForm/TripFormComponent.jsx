@@ -1,16 +1,16 @@
 // import React from 'react';
 import PropTypes from 'prop-types';
 
-const ActivityFormComponent = ({ activity, handleChange, handleSubmit, handleCancel, isEditing }) => {
+const TripFormComponent = ({ trip, handleChange, handleSubmit, handleCancel, isEditing }) => {
   return (
     <>
-      <h1 className="title">{isEditing ? 'Edit Activity' : 'Add Activity'}</h1>
+      <h1 className="title">{isEditing ? 'Edit Trip' : 'Add Trip'}</h1>
       <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
           name='title'
           placeholder="Titel"
-          value={activity.title}
+          value={trip.title}
           onChange={(e) => handleChange('title', e.target.value)}
           className="input"
         />
@@ -18,7 +18,7 @@ const ActivityFormComponent = ({ activity, handleChange, handleSubmit, handleCan
           type="date"
           name='startDate'
           placeholder="Startdatum"
-          value={activity.startDate}
+          value={trip.startDate}
           onChange={(e) => handleChange('startDate', e.target.value)}
           className="input"
         />
@@ -26,7 +26,7 @@ const ActivityFormComponent = ({ activity, handleChange, handleSubmit, handleCan
           type="date"
           name='endDate'
           placeholder="Slutdatum"
-          value={activity.endDate}
+          value={trip.endDate}
           onChange={(e) => handleChange('endDate', e.target.value)}
           className="input"
         />
@@ -34,7 +34,7 @@ const ActivityFormComponent = ({ activity, handleChange, handleSubmit, handleCan
           type="text"
           name='destination'
           placeholder="Destination"
-          value={activity.destination}
+          value={trip.destination}
           onChange={(e) => handleChange('destination', e.target.value)}
           className="input"
         />
@@ -49,8 +49,8 @@ const ActivityFormComponent = ({ activity, handleChange, handleSubmit, handleCan
   );
 };
 
-ActivityFormComponent.propTypes = {
-  activity: PropTypes.shape({
+TripFormComponent.propTypes = {
+  trip: PropTypes.shape({
     title: PropTypes.string,
     startDate: PropTypes.string,
     endDate: PropTypes.string,
@@ -63,4 +63,5 @@ ActivityFormComponent.propTypes = {
   
 };
 
-export default ActivityFormComponent;
+
+export default TripFormComponent;
