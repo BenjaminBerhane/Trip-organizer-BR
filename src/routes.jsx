@@ -20,6 +20,10 @@ const router = createBrowserRouter([
         element: <TripForm />,
       },
       {
+        path: "/edittrip/:tripId",
+        element: <TripForm />,
+      },
+      {
         path: "/alltripsview",
         element: <AllTripsView />,
       },

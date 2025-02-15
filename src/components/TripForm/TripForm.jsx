@@ -1,38 +1,49 @@
 import { useState, useEffect } from "react";
-import ActivityFormComponent from './TripFormComponent';
-import { getTrips } from "../../utils/storage";
-import { handleTripSubmission } from "../../utils/tripHandlers";
-import { useNavigate } from "react-router-dom";
+import TripFormComponent from './TripFormComponent';
+import { addTrip, updateTrip } from "../../reducers/tripSlice";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import './TripForm.css'; 
 
 
 const TripForm = () => {
-  const [activity, setActivity] = useState({ title: "", startDate: "", endDate: "", destination: "" });
-  const [destinations, setDestinations] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
+  const { tripId } = useParams(); // Get tripId from URL
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-    //! Load trips from local storage on component mount
+  const trips = useSelector((state) => state.trips.trips); // get trips from Redux store
+  const existingTrip = trips.find((trip) => trip.id === tripId); // Find the trip by ID
+
+
+  const [trip, setTrip] = useState(
+    existingTrip || { title: "", startDate: "", endDate: "", destination: "" }
+  );
+
+ /*  const [destinations, setDestinations] = useState([]); */ // necessary?
+  const [errorMessage, setErrorMessage] = useState(""); 
+
+    // If editing, load the trip data
     useEffect(() => {
-      const savedTrips = getTrips();
-      if (savedTrips) {
-        setDestinations(savedTrips);
+      if (existingTrip) {
+        setTrip(existingTrip);
       }
-    }, []);
+    }, [existingTrip]);
 
   const handleChange = (field, value) => {
-    setActivity({ ...activity, [field]: value });
+    setTrip({ ...trip, [field]: value });
   };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (activity.title.trim() !== "" && activity.startDate.trim() !== "" && activity.endDate.trim() !== "" && activity.destination.trim() !== "") {
-      handleTripSubmission(activity); // Pass activity directly
-  
-      const newDestination = { ...activity };
-      console.log(`New destination added: ${newDestination.title}`);
-      setDestinations([...destinations, newDestination]);
-      setActivity({ title: "", startDate: "", endDate: "", destination: "" });
+    if (trip.title.trim() !== "" && trip.startDate.trim() !== "" && trip.endDate.trim() !== "" && trip.destination.trim() !== "") {
+      if (existingTrip) {
+        dispatch(updateTrip(trip)); // Update existing trip
+      } else {
+        dispatch(addTrip(trip)); // Add new trip
+      }
+
+      setTrip({ title: "", startDate: "", endDate: "", destination: "" });
       setErrorMessage("");
       navigate("/alltripsview");
     }
@@ -42,13 +53,14 @@ const TripForm = () => {
   };
 
   const handleCancel = () => {
-    setActivity({ title: "", startDate: "", endDate: "", destination: "" });
+    navigate("/alltripsview"); // ✅ Redirect instead of resetting
   };
+  
 
   return (
     <div className="card-content">
-      <ActivityFormComponent
-        activity={activity}
+      <TripFormComponent
+        trip={trip}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         handleCancel={handleCancel}
@@ -58,5 +70,7 @@ const TripForm = () => {
     </div>
   );
 };
+
+
 
 export default TripForm;

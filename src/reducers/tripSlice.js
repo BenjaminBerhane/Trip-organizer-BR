@@ -15,17 +15,25 @@ export const saveTripsToLocalStorage = createAsyncThunk(
   }
 );
 
+const initialState = {
+  trips: loadTripsFromLocalStorage(), // ✅ Ladda resor vid start
+  selectedTrip: null,
+  status: 'idle',
+  error: null
+}
+
 const tripSlice = createSlice({
   name: 'trips',
-  initialState: {
-    trips: loadTripsFromLocalStorage(), // ✅ Ladda resor vid start
-    selectedTrip: null,
-    status: 'idle',
-    error: null
-  },
+  initialState,
   reducers: {
     addTrip: (state, action) => {
       state.trips.push(action.payload);
+    },
+    updateTrip: (state, action) => {
+      const index = state.trips.findIndex(trip => trip.id === action.payload.id);
+      if (index !== -1) {
+        state.trips[index] = { ...state.trips[index], ...action.payload };
+      }
     },
     setSelectedTrip: (state, action) => {
       state.selectedTrip = action.payload;
@@ -50,5 +58,5 @@ const tripSlice = createSlice({
   }
 });
 
-export const { addTrip, setSelectedTrip, loadTrips } = tripSlice.actions;
+export const { addTrip, setSelectedTrip, loadTrips, updateTrip } = tripSlice.actions;
 export default tripSlice.reducer;

@@ -1,8 +1,8 @@
-import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import Testing from '../TripItem/TripItem.jsx';
 import './TripList.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { loadTrips } from '../../reducers/tripSlice.js';
 
 
 
@@ -11,6 +11,10 @@ const TripList = () => {
 
   const trips = useSelector(state => state.trips?.trips || []);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  dispatch(loadTrips);
+  
 
   const handleClickAdd =() => {
     navigate ("/addtrip");

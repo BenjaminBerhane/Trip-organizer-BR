@@ -1,6 +1,7 @@
 import { saveTrip } from "./storage";
 import { v4 as uuidv4 } from 'uuid';
 
+
 export function handleTripSubmission(trip) {
     console.log("Submitted Trip:", trip);
 
@@ -14,5 +15,5 @@ export function handleTripSubmission(trip) {
         trip.id = uuidv4();
     }
 
-    saveTrip(trip);
+    saveTrip(trip); // finns i utils/storage.js
 }
