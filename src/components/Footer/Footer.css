@@ -6,7 +6,7 @@ footer {
     padding: 1rem 0;
     font-size: 0.9rem;
     border-top: 1px solid #ddd;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
