@@ -1,7 +1,3 @@
-Efter att ha granskat ditt repository "Trip-organizer-BR" har jag skapat ett förslag på en README-fil som kan passa projektet. Denna README ger en översikt över projektet, dess funktioner, installationsinstruktioner och annan relevant information.
-
----
-
 # Trip Organizer BR
 
 Trip Organizer BR är en webbapplikation byggd med React och Vite som hjälper användare att planera och hantera sina resor. Användare kan skapa, redigera och visa detaljer om sina resor på ett enkelt och intuitivt sätt.
@@ -87,6 +83,3 @@ Bidrag är välkomna! Om du har förslag på förbättringar eller hittar buggar
 
 Detta projekt är licensierat under MIT-licensen.
 
----
-
-Denna README är baserad på strukturen och innehållet i ditt repository. Om ytterligare funktioner eller detaljer läggs till i projektet, se till att uppdatera README-filen för att återspegla dessa ändringar. 
