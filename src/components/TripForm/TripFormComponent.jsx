@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const TripFormComponent = ({ trip, handleChange, handleSubmit, handleCancel, isEditing, errorMessage }) => {
   return (
     <>
-      <h1 className="title">{isEditing ? 'Edit Trip' : 'Add Trip'}</h1>
+      <h1 className="title">{isEditing ? 'Ändra resa' : 'Lägg till resa'}</h1>
       <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
@@ -39,10 +39,10 @@ const TripFormComponent = ({ trip, handleChange, handleSubmit, handleCancel, isE
           className="input"
         />
         <button type="submit" className="button">
-          {isEditing ? 'Update' : 'Save'}
+          {isEditing ? 'Spara' : 'Spara'}
         </button>
         <button type="button" className="button" onClick={handleCancel}>
-          Cancel
+          Avbryt
         </button>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
       </form>
