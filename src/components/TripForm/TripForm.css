@@ -1,0 +1,82 @@
+.card-content {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 4rem;
+    max-width: 600px;
+    min-width: 250px;
+    margin: 20px auto;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    background-color: rgb(243, 243, 243);
+    color: black;
+  }
+  .input::-webkit-calendar-picker-indicator { /* calendar icon in browser */
+    filter: invert(100%); /* inverts from white to black */
+  }
+
+  .input:active{
+    background-color: white;
+  }
+  
+  .button {
+
+    width: 80px;
+  }
+  #cancel-button {
+    background-color: #a01e1e;
+  }
+  #cancel-button:hover {
+    background-color: #771b1b;
+  }
+
+  .result {
+    margin-top: 20px;
+  }
+  
+  .result p {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .result ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .result li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .result li strong {
+    color: #007bff;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }

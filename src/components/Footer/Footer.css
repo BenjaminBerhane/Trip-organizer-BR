@@ -1,0 +1,26 @@
+/* FOOTER STYLING */
+footer {
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+footer p:first-child {
+    font-weight: bold;
+    color: #0e4c47;
+}
+
+footer p:last-child {
+    color: #555;
+}
