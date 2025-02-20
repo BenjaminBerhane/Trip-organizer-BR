@@ -6,6 +6,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
+    padding: 15px;
   }
   
   .inspiration-images img {
@@ -13,5 +15,5 @@
     height: 600px;
     object-fit: cover;
     border-radius: 8px;
-    padding-left: 29px;
+    max-width: 90%;
   }
