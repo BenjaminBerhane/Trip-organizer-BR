@@ -1,0 +1,19 @@
+.inspiration-container {
+    margin-top: 20px;
+  }
+  
+  .inspiration-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 15px;
+  }
+  
+  .inspiration-images img {
+    width: 900px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 8px;
+    max-width: 90%;
+  }

@@ -24,6 +24,7 @@ const TripList = () => {
   const handleClickAdd =() => {
     navigate ("/addtrip");
   }
+  const sortedTrips = [...trips].sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
 
   return (
     <section className='trip-list-section-wrapper'>
@@ -40,7 +41,7 @@ const TripList = () => {
         ))}
       </ul>
     </section>
-  )
-}
+  );
+};
 
-export default TripList
+export default TripList;
