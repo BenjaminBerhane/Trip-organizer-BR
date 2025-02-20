@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlane, faHouse, faPlus, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
+import { faPlane, faHouse, faPlus  } from '@fortawesome/free-solid-svg-icons'
 import './Navbar.css'
 import { NavLink } from 'react-router-dom'
 
@@ -21,10 +21,7 @@ function Navbar() {
                 <FontAwesomeIcon icon={faPlus} />
                 <span>Skapa Resa</span>
             </NavLink></li>
-            <li><NavLink to="*">
-                <FontAwesomeIcon icon={faExclamationTriangle} />
-                <span>ErrorPage (temp)</span>
-            </NavLink></li>
+            
 
         </ul>
     </nav>

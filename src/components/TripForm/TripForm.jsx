@@ -45,7 +45,7 @@ const TripForm = () => {
       navigate("/alltripsview");
     }
     else {
-      setErrorMessage("Please fill out all fields before submitting.");
+      setErrorMessage("Var vänlig och fyll i alla fält.");
     }
   };
 
