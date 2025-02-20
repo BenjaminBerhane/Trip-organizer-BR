@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import TripItem from '../TripItem/TripItem.jsx';
 import './TripList.css';
 import { useSelector, /* useDispatch  */} from 'react-redux';
-/* import { loadTrips } from '../../reducers/tripSlice.js'; */
+import { useMemo } from 'react';
 
 
 
@@ -10,6 +10,11 @@ import { useSelector, /* useDispatch  */} from 'react-redux';
 const TripList = () => {
 
   const trips = useSelector(state => state.trips?.trips || []);
+
+  const sortedTrips = useMemo(() => trips.toSorted((a, b) =>    /*sorterar listan efter startdatum toSorted för att inte mutera orginal arrayen. UseMemo används för att inte rendera om sorteringen varje gång komponenten renderas.*/
+    new Date(a.startDate) - new Date(b.startDate) 
+  ), [trips]);
+  
   const navigate = useNavigate();
 /*   const dispatch = useDispatch(); */ /* No longer needed as local storage is loaded in tripSlice */
 
@@ -30,7 +35,7 @@ const TripList = () => {
         </div>
       </div>
       <ul className='trip-list'>
-        {trips.map((trip) => (
+        {sortedTrips.map((trip) => (
           <TripItem key={trip.id} {...trip} />
         ))}
       </ul>

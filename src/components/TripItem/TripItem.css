@@ -39,6 +39,12 @@ border-radius: 8px;
   align-items: center;
   justify-content: center;
 }
+#delete-button{
+  background-color: #a01e1e;
+}
+#delete-button:hover{
+  background-color: #771b1b;
+}
 
 @media (min-width: 768px) {
   .trip-buttons {

@@ -31,7 +31,7 @@
   display: inline-block;
   text-decoration: none;
   color: #fff;
-  background-color: #ff4d4d;
+  background-color: #a01e1e;
   padding: 3px 7px;
   border-radius: 5px;
   font-size: 0.6rem;
@@ -40,7 +40,7 @@
 }
 
 .back-button:hover {
-  background-color: #e04343;
+  background-color: #771b1b;
 }
 
 .deleteTripBtn,
@@ -54,7 +54,7 @@
 }
 
 .deleteTripBtn {
-  background-color: #ff4d4d;
+  background-color: #a01e1e;
   color: white;
   margin-right: 10px;
 }
@@ -65,7 +65,7 @@
 }
 
 .deleteTripBtn:hover {
-  background-color: #e04343;
+  background-color: #771b1b;
 }
 
 .EditTripBtn:hover {

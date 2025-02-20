@@ -53,7 +53,7 @@ const TripItem = ({id}) => {
       <button onClick={handleClickEdit} aria-label='Edit trip'>
         <FontAwesomeIcon icon={faPencil} fixedWidth />
       </button>
-      <button onClick={handleClickDelete} aria-label='Delete trip'>
+      <button id='delete-button' onClick={handleClickDelete} aria-label='Delete trip'>
         <FontAwesomeIcon icon={faTrash} fixedWidth />
       </button>
       {/* <button onClick={handleClickEdit}>
