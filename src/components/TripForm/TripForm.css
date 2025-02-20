@@ -43,7 +43,12 @@
 
     width: 80px;
   }
-  
+  #cancel-button {
+    background-color: #a01e1e;
+  }
+  #cancel-button:hover {
+    background-color: #771b1b;
+  }
 
   .result {
     margin-top: 20px;

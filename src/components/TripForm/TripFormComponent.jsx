@@ -41,7 +41,7 @@ const TripFormComponent = ({ trip, handleChange, handleSubmit, handleCancel, isE
         <button type="submit" className="button">
           {isEditing ? 'Spara' : 'Spara'}
         </button>
-        <button type="button" className="button" onClick={handleCancel}>
+        <button type="button" className="button" id='cancel-button' onClick={handleCancel}>
           Avbryt
         </button>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
