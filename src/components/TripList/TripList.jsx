@@ -19,6 +19,7 @@ const TripList = () => {
   const handleClickAdd =() => {
     navigate ("/addtrip");
   }
+  const sortedTrips = [...trips].sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
 
   return (
     <section className='trip-list-section-wrapper'>
@@ -30,12 +31,12 @@ const TripList = () => {
         </div>
       </div>
       <ul className='trip-list'>
-        {trips.map((trip) => (
+        {sortedTrips.map((trip) => (
           <TripItem key={trip.id} {...trip} />
         ))}
       </ul>
     </section>
-  )
-}
+  );
+};
 
-export default TripList
+export default TripList;

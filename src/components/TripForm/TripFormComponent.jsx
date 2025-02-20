@@ -1,7 +1,7 @@
 // import React from 'react';
 import PropTypes from 'prop-types';
 
-const TripFormComponent = ({ trip, handleChange, handleSubmit, handleCancel, isEditing }) => {
+const TripFormComponent = ({ trip, handleChange, handleSubmit, handleCancel, isEditing, errorMessage }) => {
   return (
     <>
       <h1 className="title">{isEditing ? 'Edit Trip' : 'Add Trip'}</h1>
@@ -44,6 +44,7 @@ const TripFormComponent = ({ trip, handleChange, handleSubmit, handleCancel, isE
         <button type="button" className="button" onClick={handleCancel}>
           Cancel
         </button>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
       </form>
     </>
   );
@@ -60,7 +61,7 @@ TripFormComponent.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   handleCancel: PropTypes.func.isRequired,
   isEditing: PropTypes.bool.isRequired,
-  
+  errorMessage: PropTypes.string,
 };
 
 
