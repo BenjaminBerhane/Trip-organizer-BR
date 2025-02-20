@@ -2,6 +2,12 @@
 
 Trip Organizer BR är en webbapplikation byggd med React och Vite som hjälper användare att planera och hantera sina resor. Användare kan skapa, redigera och visa detaljer om sina resor på ett enkelt och intuitivt sätt.
 
+## Boiler Room v.6
+
+Figma (wireframes): https://www.figma.com/design/lgNRSKPfVPXPBq3Go7ufHS/Trip-Organizer?node-id=6-8&t=mEfoiHIJ8hCSY0CJ-0
+Figjam (flödesschema, User story):https://www.figma.com/board/Ke6L3s6kbiPW6XMLRwNbcR/Trip-Organizer?node-id=0-1&p=f&t=HJHnBoKg7nFoZN19-0
+
+
 ## Funktioner
 
 - **Skapa och hantera resor**: Lägg till nya resor med detaljer som destination, datum och beskrivning.
